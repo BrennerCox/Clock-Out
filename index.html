@@ -35,7 +35,7 @@
     }
     label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
     input[type="text"], input[type="time"], input[type="date"], input[type="password"],
-    select {
+    select, textarea {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid #ccc;
@@ -44,6 +44,10 @@
       font-size: 0.95em;
       box-sizing: border-box;
       background-color: #fff;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
     }
     .form-actions { text-align: center; }
     .form-actions button {
@@ -81,18 +85,18 @@
   <h2>Staff Clock Out</h2>
   <form id="employeeForm">
     <!-- Employee Info -->
-      <label for="employee_name">Employee Name</label>
-      <select id="employee_name" name="employee_name" required>
-        <option value="">Select Employee</option>
-        <option>Junior</option>
-        <option>Yorman</option>
-        <option>Julio</option>
-        <option>Eddy</option>
-        <option>Yordano</option>
-        <option>Joel</option>
-        <option>Yendry</option>
-        <option>Chicote</option>
-      </select>
+    <label for="employee_name">Employee Name</label>
+    <select id="employee_name" name="employee_name" required>
+      <option value="">Select Employee</option>
+      <option>Junior</option>
+      <option>Yorman</option>
+      <option>Julio</option>
+      <option>Eddy</option>
+      <option>Yordano</option>
+      <option>Joel</option>
+      <option>Yendry</option>
+      <option>Chicote</option>
+    </select>
 
     <!-- Hidden Date + Time -->
     <input type="hidden" id="date" name="date">
@@ -103,6 +107,10 @@
     <input type="hidden" id="longitude" name="longitude">
     <input type="hidden" id="ip_address" name="ip_address">
     <input type="hidden" id="address" name="address">
+
+    <!-- Notes Field -->
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes" placeholder="Enter any notes..."></textarea>
 
     <div class="form-actions">
       <button type="submit">Submit Form</button>
